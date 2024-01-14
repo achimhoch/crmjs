@@ -1,0 +1,52 @@
+ <%- include('header.ejs') %>
+ <div class="row">
+    <div class="column-responsive column-100">
+        <div class="aussonderung index content">
+            <a class="button float-right" href="/search">Suche</a>
+            <a class="button float-right" href="/druckeradd">Neuer Drucker</a>
+            <h3>Druckerliste</h3>
+            <div class="table-responsive">
+                <table>
+                    <tr>
+                        <th>DNS</th>
+                        <th>Mac</th>
+                        <th>IP</th>
+                        <th>Ort</th>
+                        <th>Hersteller</th>
+                        <th>Bezeichnung</th>
+                        <th class="actions">Action</th>
+                    </tr>
+                    <% for (i in data.data) {
+                       
+                    %>
+                    <tr>
+                        <td><%=data.data[i]['DNS']%></td>
+                        <td><%=data.data[i]['MAC']%></td>
+                        <td><%=data.data[i]['IP']%></td>
+                        <td><%=data.data[i]['Ort']%></td>
+                        <td><%=data.data[i]['Hersteller']%></td>
+                        <td><%=data.data[i]['Bezeichnung']%></td>
+                        <td>
+                            <a href="/printerview?id=<%=data.data[i]['id']%>&page=<%=page%>">view</a>
+                            <a href="/printeredit?id=<%=data.data[i]['id']%>&page=<%=page%>">edit</a>
+                        </td>
+                    </tr>
+                    <% }; %> 
+                </table>
+            </div>
+            <div class="paginatior">
+                <ul class="pagination">
+                   <a href="/liste?page=1">erster&nbsp;| </a>
+                   <a href="/liste?page=<%=vPage%>">&nbsp;vorherige&nbsp;|</a>
+                   <% for (p = 1; p <= pages; p++) { %>
+                    <a href="/liste?page=<%=p%>">&nbsp;<%=p%>&nbsp;|</a>
+                   <% } %>
+                   <a href="/liste?page=<%=nPage%>">&nbsp;nächste&nbsp;|</a>
+                   <a href="/liste?page=<%=pages%>">&nbsp;letzter</a>  
+                </ul>
+                <p></p>
+            </div>
+        </div>
+    </div>
+</div>
+ <%- include('footer.ejs') %>

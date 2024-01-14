@@ -1,0 +1,67 @@
+<%- include('header.ejs') %>
+<div class="row">
+    <div class="column-responsive column-100">
+            <a class="button float-right" href="/liste">zurück</a>
+            <div class="druckerliste form content">
+                <form action="/insertdrucker" method="post">
+                    <fieldset>
+                        <legend>Neuer Drucker</legend>
+                        <label>MAC:</label>
+                        <input type="text" name="mac" >
+                        <label>DNS:</label>
+                        <input type="text" name="dns" >
+                        <label>IP:</label>
+                        <input type="text" name="ip" >
+                        <label>Ort:</label>
+                        <input type="text" name="ort" >
+                        <label>Hersteller:</label>
+                        <select name="hersteller">
+                            <option value="" autofocus>bitte auswählen...</option>
+                            <option value="Lexmark">Lexmark</option>
+                            <option value="Brother">Brother</option>
+                            <option value="HP">HP</option>
+                        </select>
+                        <label>Bezeichnung:</label>
+                        <select name="bezeichnung">
+                            <option value="" autofocus>bitte auswählen...</option>
+                            <optgroup label="Lexmark">
+                                <option value="E460dn">E460dn</option>
+                                <option value="MX511dn">MX511dn</option>
+                                <option value="MS610dn">MS610dn</option>
+                                <option value="MS810dn">MS810dn</option>
+                                <option value="MX521ade">MX521ade</option>
+                                <option value="MX521de">MX521de</option>
+                                <option value="MS621dn">MS621dn</option>
+                                <option value="MS823dn">MS823dn</option>
+                            </optgroup>
+                            <optgroup label="Brother">
+                                <option value="MFC-J5945DW">MFC-J5945DW</option>
+                                <option value="MFC-J5955DW">MFC-J5955DW</option>
+                                <option value="HL-J6000DW">HL-J6000DW</option>
+                            </optgroup>
+                            <optgroup label="HP">
+                                <option value="Laserjet P3005n">Laserjet P3005n</option>
+                                <option value="Laserjet P3005dn">Laserjet P3005dn</option>
+                                <option value="Laserjet 2420n">Laserjet 2420n</option>
+                                <option value="Color-Laserjet CP 3525dn">Color-Laserjet CP 3525dn</option>
+                                <option value="Laserjet M2727nf">Laserjet M2727nf</option>
+                                <option value="Officejet Pro X476dw">Officejet Pro X476dw</option>
+                                <option value="Officejet Pro x576dw">Officejet Pro x576dw</option>
+                                <option value="PageWide Pro 477dw">PageWide Pro 477dw</option>
+                                <option value="'PageWide Pro 452dw">'PageWide Pro 452dw</option>
+                            </optgroup>
+                        </select>
+                        <label>Typ:</label>
+                        <select name="typ">
+                            <option>bitte auswählen...</option>
+                            <option value="0">nonMFP</option>
+                            <option value="1">MFP</option>
+                        </select>
+                    </fieldset>
+                    <button type="submit">speichern</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('footer.ejs') %>

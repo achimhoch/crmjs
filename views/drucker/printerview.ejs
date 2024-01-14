@@ -1,0 +1,73 @@
+<%- include('header.ejs') %>
+<div class="row">
+    <div class="column-responsive column-100">
+        <a class="button float-right" href="/liste?page=<%=page%>">zurück</a>
+        <div class="druckerliste view content">
+            <a href="http://<%=drucker.data[0]['DNS']%>.rz.uni-bamberg.de" title="Druckerwebseite"><h3><%=drucker.data[0]['Hersteller']%>&nbsp;<%=drucker.data[0]['Bezeichnung']%></h3></a>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <td><%=drucker.data[0]['id']%></td>
+                </tr>
+                <tr>
+                    <th>MAC</th>
+                    <td><%=drucker.data[0]['MAC']%></td>
+                </tr>
+                <tr>
+                    <th>DNS</th>
+                    <td><%=drucker.data[0]['DNS']%></td>
+                </tr>
+                <tr>
+                    <th>IP</th>
+                    <td><%=drucker.data[0]['IP']%></td>
+                </tr>
+                <tr>
+                    <th>Ort</th>
+                    <td><%=drucker.data[0]['Ort']%></td>
+                </tr>
+                <tr>
+                    <th>Hersteller</th>
+                    <td><%=drucker.data[0]['Hersteller']%></td>
+                </tr>
+                <tr>
+                    <th>Bezeichnung</th>
+                    <td><%=drucker.data[0]['Bezeichnung']%></td>
+                </tr>
+                <tr>
+                    <th>Seriennummer:</th>
+                    <td><%=binds[0]['value']%></td>
+                </tr>
+                <tr>
+                    <th colspan="2">Toner</th>
+                </tr>
+                <tr>
+                    <th>Farbe:</th>
+                    <td><%=binds[1]['value']%></td>
+                </tr>
+                <tr>
+                    <th>Toner-Seriennr:</th>
+                    <td><%=binds[2]['value']%></td>
+                </tr>
+                <tr>
+                    <th colspan="2">Fotoleiter</th>
+                </tr>
+                <tr>
+                    <th>Modell:</th>
+                    <td><%=binds[4]['value']%></td>
+                </tr>
+                <tr>
+                    <th>Seriennummer:</th>
+                    <td><%=binds[3]['value']%></td>
+                </tr>
+                <tr>
+                    <th colspan="2">Firmware</th>
+                </tr>
+                <tr>
+                    <th>FW:</th>
+                    <td><%=binds[5]['value']%>&nbsp;/&nbsp;<%=binds[6]['value']%></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include('footer.ejs') %>

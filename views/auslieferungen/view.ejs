@@ -1,0 +1,92 @@
+<%-include('../header.ejs') %>
+<div class="row">
+    <div class="column-responsive column-100">
+        <a class="button float-right" href="/auslieferung">zurück</a>
+        <a class="button float-right" href="/auslieferung/pdf?id=<%=id%>">PDF</a>
+        <div class="auslieferungen view content">
+            <h3><%=data.data[0]['KaufscheinNr']%></h3>
+            <table>
+                <tr>
+                    <th>Id:</th>
+                    <td><%=data.data[0]['id']%></td>
+                </tr>
+                <tr>
+                    <th>Datum:</th>
+                    <td><%=datum%></td> 
+                </tr>
+                <tr>
+                    <th>Lehrstuhl:</th>
+                    <td><%=data.data[0]['bezeichnung']%></td>
+                </tr>
+                <tr>
+                    <th>Empfänger:</th>
+                    <td><%=data.data[0]['Anrede']%>&nbsp;<%=data.data[0]['Titel1']%>&nbsp;<%=data.data[0]['Titel2']%>&nbsp;<%=data.data[0]['Name']%></td>
+                </tr>
+                <tr>
+                    <th>Status:</th>
+                    <% if (data.data[0]['Status'] == 4) { %>
+                    <td><b style="color: green">ausgeliefert</b> </td>
+                    <%
+                    } 
+                    if (data.data[0]['Status'] == 3) {
+                    %>
+                    <td><b style="color: yellow">im RZ</b></td>
+                    <%
+                    } 
+                    if (data.data[0]['Status'] == 2) {
+                    %>
+                    <td><b style="color: green">RZ ausgeliefert</b> </td>
+                    <%
+                    } 
+                    if (data.data[0]['Status'] == 1) {
+                    %>
+                    <td><b style="color: orange">in Bearbeitung</b></td> 
+                    <%
+                    } 
+                    if (data.data[0]['Status'] == 0) {
+                    %>
+                        <td><b style="color: red">bestellt</b></td>
+                    <%
+                    }
+                    %>
+                </tr>
+                <tr>
+                    <th>Druckstatus:</th>
+                    <%
+                    if (data.data[0]['PDF'] == 1) {
+                    %>
+                    <td><b style="color: green">gedruckt</b> </td>
+                    <% } 
+                    if (data.data[0]['PDF'] == 0) { %>
+                    <td><b style="color: red">!drucken!</b> </td>
+                    <%}%>
+                </tr>
+               
+            </table>
+        </div>
+        <div class="auslieferungen view content">
+            <h4>Inhalt</h4>
+            <div class="table-responsive">
+                <table>
+                    <tr>
+                        <th>Menge</th>
+                        <th>Bezeichnung</th>
+                        <th class="actions"><?= __('Actions') ?></th>
+                    </tr>
+                    <% for (i in inhalt.data) { %>
+                    <tr>
+                        <td><%=inhalt.data[i]['Menge']%></td>
+                        <td><%=inhalt.data[i]['text']%></td>
+                        <td class="actions">
+                        <!--<?= $this->Html->image("eye.png", ["onmouseover" => "Tip('Ansicht')", "onmouseout" => "UnTip()", "alt" => "View", 'url' => ['controller' => 'Auslieferrztext', 'action' => 'view', $auslieferInhalt->id]]) ?>--> 
+                        <a href="">Edit</a>
+                        </td>
+                    </tr>
+                    <% } %>
+                </table>
+            </div>
+            <?php endif; ?>
+        </div>
+    </div>
+</div>
+<%-include('../footer.ejs') %>

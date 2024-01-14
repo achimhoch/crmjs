@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HWL-Kundenmanagement</title>
+    <link rel="icon" type="image/x-icon" href="/public/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+    <link href="/css/cake.css" rel="stylesheet">
+    <link href="/css/home.css" rel="stylesheet">
+    <link href="/css/milligram.min.css" rel="stylesheet">
+    <link href="/css/normalize.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="top-nav-title">
+	        <a href="/"><span>HWLCRM : <%=name%></span></a>
+        </div>
+        <div class="top-nav-links">
+            <a href="/">Home</a>
+            <a href="/auslieferung">Auslieferungen</a>
+            <a href="/bestellung">Bestellungen</a>
+            <a href="/buchung">Buchungen</a>
+            <a href="/geraeteeingeng">Geräteeingang</a>
+            <a href="/lieferscheine">Lieferscheine</a>
+            <a href="/leihlieferscheine">Leihlieferscheine</a>
+            <a href="/material">Material</a>
+        </div>
+        <div class="top-nav-links">
+            <%=user%>
+        </div>
+    </nav>
+    <main class="main">
+        <div class="container">

@@ -1,0 +1,26 @@
+<%- include('header.ejs') %>
+<div class="row">
+    <div class="column-responsive column-20">
+        <aside class="column">
+            <div class="side-nav">
+                <h4 class="heading">Action</h4>
+            <% files.forEach( function (file) {
+                var Filename = file.split('.');
+             %>
+                <a class="side-nav-item" href="/pserver?id=<%=file%>"><%=Filename[0]%></a>
+            <% }); %> 
+            </div>
+        </aside>
+    </div>
+    <div class="column-responsive column-80">
+        <div class="aussonderung index content">
+            <h3>Printserver <%=Host %></h3>
+            <div class="table-responsive">
+            <% if (Fname) { %>
+                <%- Fname %>
+            <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('footer.ejs') %> 

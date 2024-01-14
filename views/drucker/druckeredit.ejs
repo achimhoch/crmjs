@@ -1,0 +1,33 @@
+<%- include('header.ejs') %>
+<div class="row">
+    <div class="column-responsive column-100">
+            <a class="button float-right" href="/liste">zurück</a>
+            <div class="druckerliste form content">
+                <form action="/editdrucker" method="post">
+                    <fieldset>
+                        <legend>Drucker ändern</legend>
+                        <label>ID</label>
+                        <input type="number" name="id" value="<%=drucker.data[0]['id']%>" >
+                        <label>MAC:</label>
+                        <input type="text" name="mac" value="<%=drucker.data[0]['MAC']%>" >
+                        <label>DNS:</label>
+                        <input type="text" name="dns" value="<%=drucker.data[0]['DNS']%>" >
+                        <label>IP:</label>
+                        <input type="text" name="ip" value="<%=drucker.data[0]['IP']%>" >
+                        <label>Ort:</label>
+                        <input type="text" name="ort" value="<%=drucker.data[0]['Ort']%>" >
+                        <label>Hersteller:</label>
+                        <input type="text" name="hersteller" value="<%=drucker.data[0]['Hersteller']%>" >
+                        <label>Bezeichnung:</label>
+                        <input type="text" name="bezeichnung" value="<%=drucker.data[0]['Bezeichnung']%>" >
+                        <label>Typ:</label>
+                        <input type="text" name="typ" value="<%=drucker.data[0]['Typ']%>" >
+                        <input type="hidden" name="page" value="<%=page%>" >
+                    </fieldset>
+                    <button type="submit">speichern</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('footer.ejs') %>

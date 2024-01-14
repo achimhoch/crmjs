@@ -1,0 +1,13 @@
+<%-include('../header.ejs') %>
+<div class="row">
+    <div class="column-responsive column-100">
+        <div class="aussonderung index large-10 medium-8 column content">
+            <h3>Reklamationen</h3>
+            <p>Es sind <%=reklam[0]['count']%> neue <a href="/reklamation"> Reklamationen</a> vorhanden.</p>
+            <p>&nbsp;</p>
+            <h3>Bestellungen</h3>
+            <p>Es sind <%=best[0]['count']%> neue <a href="/bestellung"> Bestellungen</a> vorhanden.</p>
+        </div>
+    </div>
+</div>
+<%-include('../footer.ejs') %> 
